@@ -14,6 +14,10 @@ const contactRequestSchema = z.object({
 
 type ContactRequest = z.infer<typeof contactRequestSchema>
 
+function getFromName() {
+  return process.env.EMAIL_FROM_NAME?.trim() || 'GSARTH'
+}
+
 async function sendViaGmail({
   to,
   replyTo,
@@ -43,7 +47,7 @@ async function sendViaGmail({
   })
 
   await transporter.sendMail({
-    from: `GSARTH Leads <${user}>`,
+    from: `${getFromName()} <${user}>`,
     to,
     replyTo,
     subject,
@@ -69,7 +73,7 @@ async function sendViaResend({
 
   const resend = new Resend(apiKey)
   const result = await resend.emails.send({
-    from: 'GSARTH Leads <leads@gsarth.com>',
+    from: `${getFromName()} <leads@gsarth.com>`,
     to: [to],
     replyTo,
     subject,
