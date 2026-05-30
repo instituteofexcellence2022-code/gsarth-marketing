@@ -18,6 +18,10 @@ function getFromName() {
   return process.env.EMAIL_FROM_NAME?.trim() || 'GSARTH'
 }
 
+function getContactToEmail() {
+  return process.env.CONTACT_TO_EMAIL?.trim() || 'studyspotindia@gmail.com'
+}
+
 async function sendViaGmail({
   to,
   replyTo,
@@ -90,7 +94,7 @@ export const sendContactEmail = createServerFn({ method: 'POST' })
   .handler(async ({ data }: { data: ContactRequest }) => {
     const { name, email, phone, company, service, message } = data
 
-    const to = 'contact@gsarth.com'
+    const to = getContactToEmail()
     const replyTo = email
     const subject = `New Strategy Request — ${company} via ${name}`
     const html = `
