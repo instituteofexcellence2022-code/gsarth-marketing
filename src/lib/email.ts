@@ -43,6 +43,14 @@ function gmailApiConfigured() {
   )
 }
 
+function gmailSmtpConfigured() {
+  return Boolean(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD)
+}
+
+function resendConfigured() {
+  return Boolean(process.env.RESEND_API_KEY)
+}
+
 function base64UrlEncode(buf: Buffer) {
   return buf
     .toString('base64')
@@ -137,6 +145,9 @@ async function sendViaGmail({
       tls: {
         servername: 'smtp.gmail.com',
       },
+      connectionTimeout: 10_000,
+      greetingTimeout: 10_000,
+      socketTimeout: 20_000,
     })
 
     await transporter587.sendMail(payload)
@@ -153,6 +164,9 @@ async function sendViaGmail({
       tls: {
         servername: 'smtp.gmail.com',
       },
+      connectionTimeout: 10_000,
+      greetingTimeout: 10_000,
+      socketTimeout: 20_000,
     })
 
     await transporter465.sendMail(payload)
@@ -211,21 +225,46 @@ export const sendContactEmail = createServerFn({ method: 'POST' })
 
     const errors: Array<string> = []
 
-    try {
-      if (gmailApiConfigured()) {
-        await sendViaGmailApi({ to, replyTo, subject, html })
-      } else {
-        await sendViaGmail({ to, replyTo, subject, html })
-      }
-    } catch (err) {
-      errors.push(err instanceof Error ? err.message : 'Gmail send failed')
+    const providers: Array<{
+      name: 'resend' | 'gmail_api' | 'gmail_smtp'
+      enabled: boolean
+      send: () => Promise<void>
+    }> = [
+      {
+        name: 'resend',
+        enabled: resendConfigured(),
+        send: () => sendViaResend({ to, replyTo, subject, html }),
+      },
+      {
+        name: 'gmail_api',
+        enabled: gmailApiConfigured(),
+        send: () => sendViaGmailApi({ to, replyTo, subject, html }),
+      },
+      {
+        name: 'gmail_smtp',
+        enabled: gmailSmtpConfigured(),
+        send: () => sendViaGmail({ to, replyTo, subject, html }),
+      },
+    ]
+
+    const enabledProviders = providers.filter((p) => p.enabled)
+    if (enabledProviders.length === 0) {
+      throw new Error(
+        'Email is not configured. Set RESEND_API_KEY (recommended) or Gmail credentials.',
+      )
+    }
+
+    for (const p of enabledProviders) {
       try {
-        await sendViaResend({ to, replyTo, subject, html })
-      } catch (err2) {
-        errors.push(err2 instanceof Error ? err2.message : 'Resend send failed')
-        throw new Error(`Email delivery failed: ${errors.join(' | ')}`)
+        await p.send()
+        return { success: true }
+      } catch (err) {
+        const message =
+          err instanceof Error ? err.message : 'Unknown email provider error'
+        errors.push(`${p.name}: ${message}`)
+        console.error(`[contact-email] ${p.name} failed: ${message}`)
       }
     }
 
-    return { success: true }
+    throw new Error(`Email delivery failed: ${errors.join(' | ')}`)
   })
