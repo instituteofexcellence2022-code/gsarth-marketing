@@ -173,7 +173,7 @@ function AboutPage() {
           <div className="relative">
             <div className="relative rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-800 aspect-[4/3] sm:aspect-[4/4] lg:aspect-[4/5]">
               <img
-                src="https://images.unsplash.com/photo-1522071823991-b99c223a7092?auto=format&fit=crop&q=80&w=1600"
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1600"
                 alt="GSARTH Strategic Team"
                 loading="lazy"
                 decoding="async"
