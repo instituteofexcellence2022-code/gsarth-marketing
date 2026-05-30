@@ -116,23 +116,47 @@ async function sendViaGmail({
     throw new Error('Gmail credentials are not configured')
   }
 
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      user,
-      pass,
-    },
-  })
-
-  await transporter.sendMail({
+  const payload = {
     from: `${getFromName()} <${user}>`,
     to,
     replyTo,
     subject,
     html,
-  })
+  }
+
+  try {
+    const transporter587 = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user,
+        pass,
+      },
+      requireTLS: true,
+      tls: {
+        servername: 'smtp.gmail.com',
+      },
+    })
+
+    await transporter587.sendMail(payload)
+    return
+  } catch {
+    const transporter465 = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user,
+        pass,
+      },
+      tls: {
+        servername: 'smtp.gmail.com',
+      },
+    })
+
+    await transporter465.sendMail(payload)
+  }
 }
 
 async function sendViaResend({
