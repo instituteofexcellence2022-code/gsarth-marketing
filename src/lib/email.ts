@@ -1,5 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 import nodemailer from 'nodemailer'
+import { google } from 'googleapis'
 import { Resend } from 'resend'
 import { z } from 'zod'
 
@@ -20,6 +21,81 @@ function getFromName() {
 
 function getContactToEmail() {
   return process.env.CONTACT_TO_EMAIL?.trim() || 'studyspotindia@gmail.com'
+}
+
+function getResendFrom() {
+  return process.env.RESEND_FROM?.trim() || `${getFromName()} <onboarding@resend.dev>`
+}
+
+function toResendRecipients(to: string) {
+  return to
+    .split(',')
+    .map((x) => x.trim())
+    .filter(Boolean)
+}
+
+function gmailApiConfigured() {
+  return Boolean(
+    process.env.GMAIL_CLIENT_ID &&
+      process.env.GMAIL_CLIENT_SECRET &&
+      process.env.GMAIL_REFRESH_TOKEN &&
+      process.env.GMAIL_USER,
+  )
+}
+
+function base64UrlEncode(buf: Buffer) {
+  return buf
+    .toString('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/g, '')
+}
+
+async function sendViaGmailApi({
+  to,
+  replyTo,
+  subject,
+  html,
+}: {
+  to: string
+  replyTo: string
+  subject: string
+  html: string
+}) {
+  const user = process.env.GMAIL_USER
+  const clientId = process.env.GMAIL_CLIENT_ID
+  const clientSecret = process.env.GMAIL_CLIENT_SECRET
+  const refreshToken = process.env.GMAIL_REFRESH_TOKEN
+  const redirectUri =
+    process.env.GMAIL_REDIRECT_URI?.trim() ||
+    'https://developers.google.com/oauthplayground'
+
+  if (!user || !clientId || !clientSecret || !refreshToken) {
+    throw new Error('Gmail API credentials are not configured')
+  }
+
+  const oauth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri)
+  oauth2Client.setCredentials({ refresh_token: refreshToken })
+
+  const gmail = google.gmail({ version: 'v1', auth: oauth2Client })
+
+  const rawMessage = [
+    `From: ${getFromName()} <${user}>`,
+    `To: ${to}`,
+    `Reply-To: ${replyTo}`,
+    `Subject: ${subject}`,
+    'MIME-Version: 1.0',
+    'Content-Type: text/html; charset=UTF-8',
+    '',
+    html,
+  ].join('\r\n')
+
+  await gmail.users.messages.send({
+    userId: 'me',
+    requestBody: {
+      raw: base64UrlEncode(Buffer.from(rawMessage, 'utf8')),
+    },
+  })
 }
 
 async function sendViaGmail({
@@ -77,8 +153,8 @@ async function sendViaResend({
 
   const resend = new Resend(apiKey)
   const result = await resend.emails.send({
-    from: `${getFromName()} <leads@gsarth.com>`,
-    to: [to],
+    from: getResendFrom(),
+    to: toResendRecipients(to),
     replyTo,
     subject,
     html,
@@ -112,7 +188,11 @@ export const sendContactEmail = createServerFn({ method: 'POST' })
     const errors: Array<string> = []
 
     try {
-      await sendViaGmail({ to, replyTo, subject, html })
+      if (gmailApiConfigured()) {
+        await sendViaGmailApi({ to, replyTo, subject, html })
+      } else {
+        await sendViaGmail({ to, replyTo, subject, html })
+      }
     } catch (err) {
       errors.push(err instanceof Error ? err.message : 'Gmail send failed')
       try {

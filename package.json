@@ -23,6 +23,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.38.0",
+    "googleapis": "^173.0.0",
     "lucide-react": "^0.454.0",
     "nodemailer": "^8.0.10",
     "react": "^19.2.4",
