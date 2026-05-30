@@ -92,7 +92,7 @@ export function ContactForm() {
                     autoCapitalize="words"
                     placeholder="John Doe"
                     className={cn(
-                      "w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none",
+                      "w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 caret-blue-600 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none",
                       errors.name && "border-red-500/50 bg-red-50/50 dark:bg-red-900/10"
                     )}
                   />
@@ -109,7 +109,7 @@ export function ContactForm() {
                     autoCorrect="off"
                     placeholder="john@company.com"
                     className={cn(
-                      "w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none",
+                      "w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 caret-blue-600 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none",
                       errors.email && "border-red-500/50 bg-red-50/50 dark:bg-red-900/10"
                     )}
                   />
@@ -128,7 +128,7 @@ export function ContactForm() {
                     autoComplete="tel"
                     placeholder="+91 00000 00000"
                     className={cn(
-                      "w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none",
+                      "w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 caret-blue-600 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none",
                       errors.phone && "border-red-500/50 bg-red-50/50 dark:bg-red-900/10"
                     )}
                   />
@@ -141,7 +141,7 @@ export function ContactForm() {
                     autoComplete="organization"
                     placeholder="Acme Corp"
                     className={cn(
-                      "w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none",
+                      "w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 caret-blue-600 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none",
                       errors.company && "border-red-500/50 bg-red-50/50 dark:bg-red-900/10"
                     )}
                   />
@@ -154,7 +154,7 @@ export function ContactForm() {
                 <label className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1 sm:ml-4">Interested In</label>
                 <select
                   {...register("service")}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none appearance-none cursor-pointer"
+                  className="w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none appearance-none cursor-pointer"
                 >
                   <option>Digital Marketing</option>
                   <option>Branding & Identity</option>
@@ -174,7 +174,7 @@ export function ContactForm() {
                   autoComplete="off"
                   placeholder="Describe your growth objectives and current challenges..."
                   className={cn(
-                    "w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none resize-none",
+                    "w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 caret-blue-600 border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none resize-none",
                     errors.message && "border-red-500/50 bg-red-50/50 dark:bg-red-900/10"
                   )}
                 />
