@@ -171,15 +171,13 @@ function AboutPage() {
             </div>
           </motion.div>
           <div className="relative">
-            <div className="rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-800">
+            <div className="relative rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-800 aspect-[4/3] sm:aspect-[4/4] lg:aspect-[4/5]">
               <img
-                src="https://images.unsplash.com/photo-1522071823991-b99c223a7092?auto=format&fit=crop&q=80&w=1200"
+                src="https://images.unsplash.com/photo-1522071823991-b99c223a7092?auto=format&fit=crop&q=80&w=1600"
                 alt="GSARTH Strategic Team"
-                width={800}
-                height={1000}
                 loading="lazy"
                 decoding="async"
-                className="w-full aspect-[4/3] sm:aspect-[4/4] lg:aspect-[4/5] object-cover"
+                className="absolute inset-0 h-full w-full object-cover object-top"
               />
             </div>
             <div className="absolute -bottom-6 sm:-bottom-10 -right-4 sm:-right-10 p-4 sm:p-6 lg:p-8 backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-800">
