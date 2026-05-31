@@ -180,6 +180,446 @@ const industries = [
   'Professional Services',
 ]
 
+const growthPartnersFor = [
+  'Businesses & local brands',
+  'Educational institutions',
+  'Startups & founders',
+  'NGOs & social impact',
+  'Professionals & personal brands',
+]
+
+const serviceCatalogue = [
+  {
+    id: 'brand-strategy',
+    title: 'Brand Strategy & Consulting',
+    subtitle: 'Positioning, naming, identity systems, and market authority.',
+    items: [
+      'Brand development',
+      'Brand positioning',
+      'Brand identity creation',
+      'Brand naming',
+      'Tagline development',
+      'Market positioning strategy',
+      'Competitor analysis',
+      'Customer persona development',
+      'Brand audit',
+      'Rebranding services',
+      'Corporate identity design',
+      'Brand guidelines development',
+    ],
+  },
+  {
+    id: 'creative',
+    title: 'Graphic Design & Creative Services',
+    subtitle: 'High-quality creative that builds trust and improves conversion.',
+    items: [
+      'Logo design',
+      'Brand kit design',
+      'Social media creatives',
+      'Marketing collateral design',
+      'Brochure design',
+      'Flyer design',
+      'Pamphlet design',
+      'Banner design',
+      'Poster design',
+      'Catalogue design',
+      'Packaging design',
+      'Menu design',
+      'Invitation design',
+      'Presentation design',
+      'Infographic design',
+      'Corporate profile design',
+      'Annual report design',
+      'Newsletter design',
+    ],
+  },
+  {
+    id: 'printing',
+    title: 'Printing Solutions',
+    subtitle: 'Production-ready files and print coordination with premium quality.',
+    items: [
+      'Offset printing',
+      'Digital printing',
+      'Large format printing',
+      'Flex printing',
+      'Vinyl printing',
+      'UV printing',
+      'Fabric printing',
+      'Eco-solvent printing',
+      'Sticker printing',
+      'Label printing',
+      'Book printing',
+      'Magazine printing',
+      'Calendar printing',
+      'Diary printing',
+      'Corporate stationery printing',
+    ],
+  },
+  {
+    id: 'ooh',
+    title: 'Outdoor Advertising (OOH)',
+    subtitle: 'High-impact visibility for brand recall and local domination.',
+    items: [
+      'Hoarding advertising',
+      'Billboard advertising',
+      'Unipole advertising',
+      'Digital billboard advertising',
+      'Highway advertising',
+      'Pole kiosk advertising',
+      'Wall branding',
+      'Wall painting',
+      'Building wrap advertising',
+      'Foot over bridge advertising',
+      'Traffic signal advertising',
+      'Roundabout branding',
+      'Gantry advertising',
+      'Airport advertising',
+      'Railway station advertising',
+      'Bus shelter advertising',
+      'Public utility advertising',
+    ],
+  },
+  {
+    id: 'transit',
+    title: 'Transit Advertising',
+    subtitle: 'City-wide frequency through fleet, metro, and mobility media.',
+    items: [
+      'Auto rickshaw advertising',
+      'E-rickshaw advertising',
+      'Bus advertising',
+      'Metro advertising',
+      'Taxi advertising',
+      'Cab branding',
+      'Fleet branding',
+      'Delivery vehicle branding',
+      'Truck branding',
+      'Tempo branding',
+      'School bus advertising',
+      'Electric vehicle advertising',
+      'Mobile van advertising',
+    ],
+  },
+  {
+    id: 'retail',
+    title: 'Retail Branding Solutions',
+    subtitle: 'Storefront presence that improves footfall and trust instantly.',
+    items: [
+      'Shop branding',
+      'Store branding',
+      'Franchise branding',
+      'Mall branding',
+      'Window branding',
+      'In-store branding',
+      'POP/POS branding',
+      'Product display units',
+      'Promotional counters',
+      'Shelf branding',
+      'Kiosk branding',
+      'Showroom branding',
+    ],
+  },
+  {
+    id: 'signage',
+    title: 'Signage & Display Solutions',
+    subtitle: 'Premium signage systems for visibility, navigation, and credibility.',
+    items: [
+      'Glow sign boards',
+      'ACP sign boards',
+      'LED sign boards',
+      'Neon sign boards',
+      'Direction signage',
+      'Informational signage',
+      'Safety signage',
+      'Corporate signage',
+      'Wayfinding systems',
+      'Digital signage',
+      'Outdoor displays',
+      'Exhibition displays',
+    ],
+  },
+  {
+    id: 'direct-marketing',
+    title: 'Direct Marketing Solutions',
+    subtitle: 'On-ground reach with structured targeting and lead capture.',
+    items: [
+      'Door-to-door marketing',
+      'Pamphlet distribution',
+      'Flyer distribution',
+      'Newspaper insert distribution',
+      'Product sampling',
+      'Survey campaigns',
+      'Market research campaigns',
+      'Lead generation campaigns',
+      'Data collection campaigns',
+      'Customer feedback collection',
+      'Community outreach programs',
+    ],
+  },
+  {
+    id: 'society',
+    title: 'Residential & Society Marketing',
+    subtitle: 'Hyperlocal marketing that converts neighborhoods into customers.',
+    items: [
+      'Apartment marketing',
+      'Society promotions',
+      'Residential activation campaigns',
+      'Community engagement programs',
+      'Sampling activities',
+      'Awareness campaigns',
+      'Resident welfare association promotions',
+      'Hyperlocal marketing campaigns',
+    ],
+  },
+  {
+    id: 'education',
+    title: 'Educational Marketing Solutions',
+    subtitle: 'Admissions growth systems for schools, colleges, and institutes.',
+    items: [
+      'School promotions',
+      'College promotions',
+      'University outreach programs',
+      'Admission campaigns',
+      'Coaching institute promotions',
+      'Tuition service promotions',
+      'Student lead generation',
+      'Career fair promotions',
+      'Educational seminar marketing',
+      'Parent engagement campaigns',
+    ],
+  },
+  {
+    id: 'healthcare',
+    title: 'Healthcare Marketing Solutions',
+    subtitle: 'Trust-first marketing for clinics, hospitals, and doctors.',
+    items: [
+      'Hospital branding',
+      'Clinic promotion',
+      'Health camp promotion',
+      'Diagnostic center marketing',
+      'Medical awareness campaigns',
+      'Healthcare outreach programs',
+      'Doctor personal branding',
+    ],
+  },
+  {
+    id: 'real-estate',
+    title: 'Real Estate Marketing',
+    subtitle: 'Launch, lead generation, and site branding for property sales.',
+    items: [
+      'Property launch campaigns',
+      'Builder branding',
+      'Project promotion',
+      'Site branding',
+      'Construction site hoardings',
+      'Lead generation campaigns',
+      'Real estate roadshows',
+      'Property exhibition support',
+    ],
+  },
+  {
+    id: 'political',
+    title: 'Political & Election Campaign Management',
+    subtitle: 'Structured campaign execution with messaging, printing, and ground ops.',
+    items: [
+      'Political branding',
+      'Candidate promotion',
+      'Election campaign planning',
+      'Booth-level marketing',
+      'Public awareness campaigns',
+      'Political event management',
+      'Political printing solutions',
+      'Political vehicle campaigns',
+    ],
+  },
+  {
+    id: 'ngo',
+    title: 'NGO & Social Impact Campaigns',
+    subtitle: 'Awareness, participation, and fundraising-ready communication.',
+    items: [
+      'Awareness campaigns',
+      'Fundraising campaign support',
+      'Social welfare promotion',
+      'Education campaigns',
+      'Environmental campaigns',
+      'Health awareness campaigns',
+      'Government scheme awareness programs',
+    ],
+  },
+  {
+    id: 'events',
+    title: 'Event Marketing & Activation',
+    subtitle: 'Experiential marketing that generates leads and brand recall.',
+    items: [
+      'Product launch events',
+      'Roadshows',
+      'Brand activation campaigns',
+      'Mall activations',
+      'Exhibition marketing',
+      'Trade show promotions',
+      'Festival marketing',
+      'Campus activations',
+      'Sampling campaigns',
+      'Experience marketing',
+    ],
+  },
+  {
+    id: 'staffing',
+    title: 'Promotional Staffing Solutions',
+    subtitle: 'On-ground teams for activations, demos, lead generation, and surveys.',
+    items: [
+      'Brand promoters',
+      'Sales executives',
+      'Product demonstrators',
+      'Event staff',
+      'Hostesses',
+      'Survey teams',
+      'Lead generation teams',
+      'Merchandising staff',
+    ],
+  },
+  {
+    id: 'corporate',
+    title: 'Corporate Marketing Solutions',
+    subtitle: 'Corporate communication and brand consistency across touchpoints.',
+    items: [
+      'Corporate branding',
+      'Office branding',
+      'Internal branding',
+      'Employee engagement campaigns',
+      'Corporate event branding',
+      'Investor presentation design',
+      'Corporate communication materials',
+    ],
+  },
+  {
+    id: 'pr',
+    title: 'Public Relations (PR) Services',
+    subtitle: 'Media relations and reputation building for credibility at scale.',
+    items: [
+      'Media relations',
+      'Press release distribution',
+      'Press conference management',
+      'Reputation management',
+      'Crisis communication',
+      'Community relations',
+      'Corporate communications',
+    ],
+  },
+  {
+    id: 'digital',
+    title: 'Digital Marketing Services',
+    subtitle: 'Full-funnel digital growth with measurable performance.',
+    items: [
+      'Website development',
+      'Landing page development',
+      'Search engine optimization (SEO)',
+      'Local SEO',
+      'Google Business Profile management',
+      'Social media marketing',
+      'Social media management',
+      'Meta ads',
+      'Google ads',
+      'YouTube marketing',
+      'LinkedIn marketing',
+      'WhatsApp marketing',
+      'Email marketing',
+      'SMS marketing',
+      'Content marketing',
+      'Influencer marketing',
+      'Online reputation management',
+    ],
+  },
+  {
+    id: 'video-audio',
+    title: 'Audio & Video Advertising',
+    subtitle: 'Professional production for ads, brand stories, and campaigns.',
+    items: [
+      'Corporate videos',
+      'Promotional videos',
+      'Ad film production',
+      'Explainer videos',
+      'Testimonial videos',
+      'Product videos',
+      'Drone shoot services',
+      'Podcast production',
+      'Radio advertising',
+      'FM advertising',
+      'Cinema advertising',
+    ],
+  },
+  {
+    id: 'photography',
+    title: 'Photography Services',
+    subtitle: 'High-quality visuals that elevate trust and conversion.',
+    items: [
+      'Product photography',
+      'Corporate photography',
+      'Event photography',
+      'Real estate photography',
+      'Food photography',
+      'Industrial photography',
+    ],
+  },
+  {
+    id: 'growth',
+    title: 'Business Growth Solutions',
+    subtitle: 'Strategy + execution to expand markets and revenue.',
+    items: [
+      'Lead generation services',
+      'Sales funnel development',
+      'Customer acquisition strategy',
+      'Franchise development support',
+      'Market expansion strategy',
+      'Business consulting',
+      'Startup launch support',
+      'Growth strategy consulting',
+    ],
+  },
+  {
+    id: 'automation',
+    title: 'Technology & Marketing Automation',
+    subtitle: 'Systems that increase speed, consistency, and lead conversion.',
+    items: [
+      'CRM setup',
+      'Marketing automation',
+      'Lead management systems',
+      'WhatsApp automation',
+      'Email automation',
+      'Chatbot integration',
+      'Customer support solutions',
+      'Analytics & reporting dashboards',
+    ],
+  },
+  {
+    id: 'research',
+    title: 'Research & Intelligence Services',
+    subtitle: 'Data, insights, and planning to make marketing decisions safer.',
+    items: [
+      'Market research',
+      'Consumer research',
+      'Competitor analysis',
+      'Brand perception studies',
+      'Customer satisfaction surveys',
+      'Feasibility studies',
+      'Demand analysis',
+      'Location analysis',
+    ],
+  },
+]
+
+const promotionPackages = [
+  'Startup launch packages',
+  'Local business growth packages',
+  'Educational institution marketing packages',
+  'Healthcare marketing packages',
+  'Real estate marketing packages',
+  'NGO awareness packages',
+  'Political campaign packages',
+  'Franchise expansion packages',
+  'Corporate branding packages',
+  'Integrated online + offline marketing packages',
+]
+
 const faqs = [
   {
     q: 'How do you decide which channels we should invest in first?',
@@ -205,6 +645,7 @@ const faqs = [
 
 function ServicesPage() {
   const [openFaq, setOpenFaq] = useState<string | null>(faqs[0]?.q ?? null)
+  const [openCatalogue, setOpenCatalogue] = useState<string | null>(serviceCatalogue[0]?.id ?? null)
 
   return (
     <div className="bg-white dark:bg-slate-950 min-h-screen">
@@ -432,6 +873,49 @@ function ServicesPage() {
         </div>
       </section>
 
+      <section className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-slate-950 border-y border-slate-100 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
+            <div>
+              <h2 className="text-xs sm:text-sm font-black uppercase tracking-[0.3em] sm:tracking-[0.5em] text-slate-400 mb-4 sm:mb-6">360° Growth Partner</h2>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-4 sm:mb-6">
+                More than a marketing agency—built for complete brand and business promotion.
+              </h3>
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+                We help organizations build visibility, credibility, and predictable acquisition across online and offline channels—so your brand stays consistent and your growth stays measurable.
+              </p>
+            </div>
+
+            <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-slate-50 dark:bg-slate-900/30 border border-slate-100 dark:border-slate-800 p-6 sm:p-8 lg:p-10">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600 mb-4">We work with</p>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                {growthPartnersFor.map((x) => (
+                  <span
+                    key={x}
+                    className="px-4 py-2 rounded-full bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 text-xs sm:text-sm font-black text-slate-700 dark:text-slate-200"
+                  >
+                    {x}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { t: 'Online + Offline', d: 'One strategy connecting SEO, ads, content, events, printing, and OOH.' },
+                  { t: 'Trust + Performance', d: 'Authority building supported by measurable lead generation systems.' },
+                  { t: 'Premium execution', d: 'High-quality creative and disciplined delivery that looks credible.' },
+                  { t: 'Scalable packages', d: 'Stage-based packages for startups, institutes, NGOs, and enterprises.' },
+                ].map((x) => (
+                  <div key={x.t} className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950 p-5">
+                    <p className="text-sm font-black text-slate-900 dark:text-white mb-1">{x.t}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{x.d}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 mb-10 sm:mb-14 lg:mb-16">
           <div className="max-w-2xl">
@@ -471,6 +955,105 @@ function ServicesPage() {
                 <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{x.d}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-100 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8 mb-10 sm:mb-14 lg:mb-16">
+            <div className="max-w-2xl">
+              <h2 className="text-xs sm:text-sm font-black uppercase tracking-[0.3em] sm:tracking-[0.5em] text-slate-400 mb-4 sm:mb-6">Service Catalogue</h2>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight">
+                360° marketing, branding, advertising, and business promotion—under one roof.
+              </h3>
+            </div>
+            <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-md">
+              Use this as a full menu of capabilities. We combine the right services into a single strategy, not disconnected tasks.
+            </p>
+          </div>
+
+          <div className="space-y-3 sm:space-y-4">
+            {serviceCatalogue.map((cat) => {
+              const isOpen = openCatalogue === cat.id
+              return (
+                <div
+                  key={cat.id}
+                  className="rounded-2xl sm:rounded-3xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950 overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenCatalogue((prev) => (prev === cat.id ? null : cat.id))}
+                    className="w-full flex items-center justify-between gap-4 px-5 sm:px-7 py-5 sm:py-6 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <div>
+                      <p className="text-base sm:text-lg font-black text-slate-900 dark:text-white">{cat.title}</p>
+                      <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">{cat.subtitle}</p>
+                    </div>
+                    <span
+                      className={`shrink-0 h-10 w-10 rounded-2xl flex items-center justify-center border transition-all ${
+                        isOpen
+                          ? 'bg-blue-600 border-blue-600 text-white'
+                          : 'bg-slate-50 dark:bg-slate-900 border-slate-100 dark:border-slate-800 text-slate-500'
+                      }`}
+                    >
+                      <ArrowRight size={18} className={isOpen ? 'rotate-90 transition-transform' : '-rotate-90 transition-transform'} />
+                    </span>
+                  </button>
+                  {isOpen ? (
+                    <div className="px-5 sm:px-7 pb-6 sm:pb-7">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 sm:gap-y-3">
+                        {cat.items.map((x) => (
+                          <div key={x} className="flex items-start gap-2 text-sm font-bold text-slate-600 dark:text-slate-300">
+                            <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-blue-600" />
+                            <span className="leading-relaxed">{x}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4">
+                        <Link to="/contact" className="btn-premium text-xs sm:text-sm px-6 sm:px-10 py-4 sm:py-5">
+                          Get Proposal
+                        </Link>
+                        <a
+                          href="https://wa.me/919311015100"
+                          target="_blank"
+                          rel="noopener"
+                          className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-slate-100 dark:border-slate-800 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-slate-50 dark:hover:bg-slate-900 transition-all text-center"
+                        >
+                          WhatsApp Us
+                        </a>
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              )
+            })}
+          </div>
+
+          <div className="mt-12 sm:mt-16 rounded-[2rem] sm:rounded-[3rem] bg-slate-950 text-white border border-white/10 p-6 sm:p-8 lg:p-12 shadow-2xl shadow-blue-500/10">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8">
+              <div className="max-w-2xl">
+                <h4 className="text-2xl sm:text-3xl font-black mb-3">Complete 360° Business Promotion Packages</h4>
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  If you want everything aligned—branding + digital + offline + execution—choose a package and scale with a single growth partner.
+                </p>
+              </div>
+              <Link to="/contact" className="px-6 sm:px-10 py-4 sm:py-5 bg-white text-slate-950 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all shadow-xl whitespace-nowrap">
+                Get Package Quote
+              </Link>
+            </div>
+
+            <div className="mt-8 sm:mt-10 flex flex-wrap gap-2 sm:gap-3">
+              {promotionPackages.map((p) => (
+                <span
+                  key={p}
+                  className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm font-black text-white/90"
+                >
+                  {p}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
