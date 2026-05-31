@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { 
   Globe, 
   Search, 
@@ -646,6 +646,25 @@ const faqs = [
 function ServicesPage() {
   const [openFaq, setOpenFaq] = useState<string | null>(faqs[0]?.q ?? null)
   const [openCatalogue, setOpenCatalogue] = useState<string | null>(serviceCatalogue[0]?.id ?? null)
+  const [catalogueQuery, setCatalogueQuery] = useState('')
+
+  const normalizedQuery = catalogueQuery.trim().toLowerCase()
+  const visibleCatalogue = normalizedQuery
+    ? serviceCatalogue
+        .map((cat) => {
+          const titleMatch = cat.title.toLowerCase().includes(normalizedQuery)
+          const subtitleMatch = cat.subtitle.toLowerCase().includes(normalizedQuery)
+          const items = cat.items.filter((x) => x.toLowerCase().includes(normalizedQuery))
+          return titleMatch || subtitleMatch ? { ...cat } : { ...cat, items }
+        })
+        .filter((cat) => cat.title.toLowerCase().includes(normalizedQuery) || cat.subtitle.toLowerCase().includes(normalizedQuery) || cat.items.length > 0)
+    : serviceCatalogue
+
+  useEffect(() => {
+    if (!normalizedQuery) return
+    if (openCatalogue && visibleCatalogue.some((c) => c.id === openCatalogue)) return
+    setOpenCatalogue(visibleCatalogue[0]?.id ?? null)
+  }, [normalizedQuery, openCatalogue])
 
   return (
     <div className="bg-white dark:bg-slate-950 min-h-screen">
@@ -973,8 +992,54 @@ function ServicesPage() {
             </p>
           </div>
 
+          <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 p-5 sm:p-7 mb-8 sm:mb-10">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600 mb-4">Find services</p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+              <div className="relative flex-1">
+                <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                <input
+                  value={catalogueQuery}
+                  onChange={(e) => setCatalogueQuery(e.target.value)}
+                  placeholder="Search: SEO, printing, hoarding, education, PR, CRM…"
+                  className="w-full pl-11 pr-4 py-3 sm:py-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 text-sm sm:text-base font-bold outline-none focus:border-blue-600"
+                />
+              </div>
+              <div className="flex items-center justify-between sm:justify-end gap-3">
+                <span className="text-xs sm:text-sm font-black text-slate-500">
+                  {visibleCatalogue.length} categories
+                </span>
+                {catalogueQuery ? (
+                  <button
+                    type="button"
+                    onClick={() => setCatalogueQuery('')}
+                    className="px-4 py-2 rounded-full bg-slate-950 text-white text-[11px] font-black uppercase tracking-widest hover:opacity-90 transition-opacity"
+                  >
+                    Clear
+                  </button>
+                ) : null}
+              </div>
+            </div>
+
+            <div className="mt-5 sm:mt-6 flex flex-wrap gap-2">
+              {visibleCatalogue.slice(0, 10).map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setOpenCatalogue(cat.id)}
+                  className={`px-4 py-2 rounded-full border text-xs font-black transition-colors ${
+                    openCatalogue === cat.id
+                      ? 'bg-blue-600 border-blue-600 text-white'
+                      : 'bg-white dark:bg-slate-950 border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900'
+                  }`}
+                >
+                  {cat.title}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="space-y-3 sm:space-y-4">
-            {serviceCatalogue.map((cat) => {
+            {visibleCatalogue.map((cat) => {
               const isOpen = openCatalogue === cat.id
               return (
                 <div

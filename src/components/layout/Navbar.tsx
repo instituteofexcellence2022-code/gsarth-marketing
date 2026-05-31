@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
@@ -26,6 +26,7 @@ export function Navbar() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const reducedMotion = useReducedMotion();
   const canUseDOM = typeof document !== "undefined";
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 
   /* Theme init */
   useEffect(() => {
@@ -52,6 +53,21 @@ export function Navbar() {
       document.body.style.overflow = "";
     }
     return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const id = window.setTimeout(() => closeButtonRef.current?.focus(), 0);
+    return () => window.clearTimeout(id);
   }, [mobileMenuOpen]);
 
   const toggleTheme = useCallback(() => {
@@ -81,6 +97,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
+              ref={closeButtonRef}
               className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               aria-label="Close menu"
             >

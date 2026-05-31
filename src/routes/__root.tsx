@@ -23,6 +23,16 @@ export const Route = createRootRouteWithContext<{
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
+      {
+        name: 'theme-color',
+        media: '(prefers-color-scheme: light)',
+        content: '#ffffff',
+      },
+      {
+        name: 'theme-color',
+        media: '(prefers-color-scheme: dark)',
+        content: '#020617',
+      },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
@@ -65,7 +75,7 @@ function RootComponent() {
     <RootDocument>
       <Navbar />
       <div className="flex flex-col min-h-screen">
-        <main className="flex-grow">
+        <main id="main-content" tabIndex={-1} className="flex-grow">
           <Outlet />
         </main>
         <Footer />
@@ -81,6 +91,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         {children}
         {/* Floating WhatsApp CTA */}
         <a

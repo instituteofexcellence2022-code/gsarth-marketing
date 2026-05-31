@@ -42,18 +42,21 @@ function ContactPage() {
                 icon={<Mail size={20} />}
                 label="Strategic Inquiries"
                 value="contact@gsarth.com"
+                href="mailto:contact@gsarth.com"
                 color="blue"
               />
               <ContactInfoItem 
                 icon={<Phone size={20} />}
                 label="Direct Line / WhatsApp"
                 value="+91 93110 15100"
+                href="tel:+919311015100"
                 color="green"
               />
               <ContactInfoItem 
                 icon={<MapPin size={20} />}
                 label="Global Hub"
                 value="New Delhi, India"
+                href="https://www.google.com/maps/search/?api=1&query=New%20Delhi%2C%20India"
                 color="orange"
               />
             </div>
@@ -82,7 +85,7 @@ function ContactPage() {
   )
 }
 
-function ContactInfoItem({ icon, label, value, color }: { icon: React.ReactNode, label: string, value: string, color: string }) {
+function ContactInfoItem({ icon, label, value, href, color }: { icon: React.ReactNode, label: string, value: string, href?: string, color: string }) {
   const colorMap: Record<string, string> = {
     blue: "text-blue-600 bg-blue-50 dark:bg-blue-900/20",
     green: "text-green-600 bg-green-50 dark:bg-green-900/20",
@@ -96,7 +99,18 @@ function ContactInfoItem({ icon, label, value, color }: { icon: React.ReactNode,
       </div>
       <div>
         <p className="text-[9px] sm:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{label}</p>
-        <p className="text-base sm:text-lg lg:text-xl font-black text-slate-900 dark:text-white">{value}</p>
+        {href ? (
+          <a
+            href={href}
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            className="text-base sm:text-lg lg:text-xl font-black text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
+            {value}
+          </a>
+        ) : (
+          <p className="text-base sm:text-lg lg:text-xl font-black text-slate-900 dark:text-white">{value}</p>
+        )}
       </div>
     </div>
   );

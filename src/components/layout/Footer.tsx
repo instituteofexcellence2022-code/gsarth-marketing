@@ -126,7 +126,9 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-0.5">Email</p>
-                  <p className="text-sm font-bold">contact@gsarth.com</p>
+                  <a className="text-sm font-bold hover:text-white transition-colors" href="mailto:contact@gsarth.com">
+                    contact@gsarth.com
+                  </a>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -135,7 +137,9 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-0.5">Call</p>
-                  <p className="text-sm font-bold">+91 93110 15100</p>
+                  <a className="text-sm font-bold hover:text-white transition-colors" href="tel:+919311015100">
+                    +91 93110 15100
+                  </a>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -144,7 +148,14 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-0.5">Office</p>
-                  <p className="text-sm font-bold">New Delhi, India</p>
+                  <a
+                    className="text-sm font-bold hover:text-white transition-colors"
+                    href="https://www.google.com/maps/search/?api=1&query=New%20Delhi%2C%20India"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    New Delhi, India
+                  </a>
                 </div>
               </li>
             </ul>
