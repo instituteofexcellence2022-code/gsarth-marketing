@@ -115,12 +115,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info & Location */}
-          <div className="space-y-4">
+          {/* Contact Info */}
+          <div>
             <p className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-[10px] sm:text-xs text-slate-400">
-              Contact & Location
+              Contact
             </p>
-            <ul className="space-y-3.5 sm:space-y-4">
+            <ul className="space-y-4 sm:space-y-5">
               <li className="flex gap-3">
                 <div className="h-9 w-9 shrink-0 rounded-lg bg-white/5 flex items-center justify-center text-blue-500">
                   <Mail size={16} />
@@ -160,54 +160,66 @@ export function Footer() {
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
 
-            {/* Google Map Card */}
-            <div className="pt-2">
-              <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900/90 shadow-xl transition-all duration-300 hover:border-blue-500/30">
-                {/* Tech Status Header - Visible on Desktop/Tablet, Hidden on Mobile */}
-                <div className="hidden sm:flex items-center justify-between px-3 py-1.5 bg-slate-900/95 border-b border-white/5 text-[10px]">
-                  <div className="flex items-center gap-1.5 text-slate-300 font-bold">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
-                    <span>Corporate HQ</span>
-                  </div>
-                  <span className="text-[9px] text-slate-400 font-mono tracking-wider">28.58°N, 77.07°E</span>
-                </div>
-
-                {/* Map Viewport - Compact on Mobile (95px), Enhanced on Desktop (180px) */}
-                <div className="relative w-full h-[95px] sm:h-[135px] lg:h-[180px] bg-slate-950">
-                  <iframe
-                    title="GSARTH Office Google Map - New Delhi 110077"
-                    src="https://maps.google.com/maps?q=Dwarka%2C%20New%20Delhi%2C%20Delhi%20110077&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    allowFullScreen={false}
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity"
-                  />
-                </div>
-
-                {/* Footer Toolbar - Ultra-compact on mobile, refined on desktop */}
-                <div className="px-2.5 sm:px-3 py-1.5 sm:py-2 bg-slate-900/95 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-[10px] sm:text-[11px] font-semibold text-slate-300 flex items-center gap-1">
-                    <MapPin size={11} className="text-orange-400 shrink-0" />
-                    New Delhi, 110077
+        {/* Large Location & Google Map Showcase (Expansive on Desktop, Compact on Mobile) */}
+        <div className="mb-12 sm:mb-16 lg:mb-20 rounded-2xl sm:rounded-3xl border border-white/10 bg-slate-900/60 overflow-hidden shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+            {/* Left Info Panel */}
+            <div className="lg:col-span-4 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-b from-slate-900/90 to-slate-950 border-b lg:border-b-0 lg:border-r border-white/10">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] sm:text-[11px] font-black uppercase tracking-wider mb-4 sm:mb-6">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                   </span>
+                  Corporate Headquarters
+                </div>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-heading font-black tracking-tight text-white mb-2 sm:mb-3">
+                  Visit Our Delhi Hub.
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                  Dwarka, New Delhi – 110077. Strategic hub for enterprise growth, full-funnel performance marketing, and branding architecture.
+                </p>
+              </div>
+
+              <div className="space-y-3 pt-4 border-t border-white/10">
+                <div className="flex items-center justify-between text-xs text-slate-400">
+                  <span className="font-semibold text-slate-300">Office Hours:</span>
+                  <span>Mon – Sat: 9:30 AM – 7:00 PM</span>
+                </div>
+                <div className="flex items-center justify-between text-xs text-slate-400">
+                  <span className="font-semibold text-slate-300">GPS Coordinates:</span>
+                  <span className="font-mono text-[11px] text-blue-400">28.5823° N, 77.0689° E</span>
+                </div>
+                <div className="pt-2">
                   <a
                     href="https://maps.google.com/?q=Dwarka+New+Delhi+Delhi+110077"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] sm:text-[11px] font-bold text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-0.5 group/link"
+                    className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs uppercase tracking-wider text-center transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-1.5 group"
                   >
-                    <span>Directions</span>
-                    <ArrowUpRight size={11} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                    <span>Get Directions in Google Maps</span>
+                    <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
               </div>
+            </div>
+
+            {/* Right Expansive Map Canvas: Large on Desktop (340px+), Compact on Mobile (140px) */}
+            <div className="lg:col-span-8 relative w-full h-[140px] sm:h-[220px] lg:h-[340px] bg-slate-950">
+              <iframe
+                title="GSARTH Office Google Map - Large Desktop View - New Delhi 110077"
+                src="https://maps.google.com/maps?q=Dwarka%2C%20New%20Delhi%2C%20Delhi%20110077&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen={false}
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full opacity-90 hover:opacity-100 transition-opacity"
+              />
             </div>
           </div>
         </div>
