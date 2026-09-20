@@ -56,8 +56,8 @@ function ContactPage() {
               <ContactInfoItem 
                 icon={<MapPin size={20} />}
                 label="Global Hub"
-                value="New Delhi, India"
-                href="https://www.google.com/maps/search/?api=1&query=New%20Delhi%2C%20India"
+                value="New Delhi - 110077, India"
+                href="https://maps.google.com/?q=New+Delhi+Delhi+110077"
                 color="orange"
               />
             </div>

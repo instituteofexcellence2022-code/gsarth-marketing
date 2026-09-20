@@ -70,10 +70,10 @@ export const organizationSchema = {
   "description": "Elite marketing, advertising, and branding agency engineered for enterprise-grade growth systems. We translate vision into mathematical ROI.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Saket District Centre",
+    "streetAddress": "Dwarka, New Delhi",
     "addressLocality": "New Delhi",
     "addressRegion": "Delhi",
-    "postalCode": "110017",
+    "postalCode": "110077",
     "addressCountry": "IN"
   },
   "sameAs": [
@@ -100,16 +100,16 @@ export const localBusinessSchema = {
   "priceRange": "₹₹₹",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Saket District Centre",
+    "streetAddress": "Dwarka, New Delhi",
     "addressLocality": "New Delhi",
     "addressRegion": "Delhi",
-    "postalCode": "110017",
+    "postalCode": "110077",
     "addressCountry": "IN"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 28.5245,
-    "longitude": 77.2066
+    "latitude": 28.5823,
+    "longitude": 77.0689
   },
   "openingHoursSpecification": [
     {

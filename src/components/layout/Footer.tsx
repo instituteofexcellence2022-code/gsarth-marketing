@@ -151,11 +151,11 @@ export function Footer() {
                   <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Office</p>
                   <a
                     className="text-sm font-bold hover:text-white transition-colors"
-                    href="https://maps.google.com/?q=Saket+District+Centre+New+Delhi+Delhi+110017"
+                    href="https://maps.google.com/?q=New+Delhi+Delhi+110077"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Saket District Centre, New Delhi
+                    New Delhi - 110077
                   </a>
                 </div>
               </li>
@@ -165,8 +165,8 @@ export function Footer() {
             <div className="pt-2">
               <div className="rounded-2xl overflow-hidden border border-white/10 bg-slate-900/80 shadow-md">
                 <iframe
-                  title="GSARTH Office Google Map - Saket District Centre, New Delhi"
-                  src="https://maps.google.com/maps?q=Saket%20District%20Centre%2C%20New%20Delhi%2C%20Delhi%20110017&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  title="GSARTH Office Google Map - New Delhi 110077"
+                  src="https://maps.google.com/maps?q=New%20Delhi%2C%20Delhi%20110077&t=&z=14&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="125"
                   style={{ border: 0 }}
@@ -178,10 +178,10 @@ export function Footer() {
                 <div className="px-3 py-2 bg-slate-900/95 border-t border-white/5 flex items-center justify-between text-xs">
                   <span className="text-[10px] font-semibold text-slate-300 flex items-center gap-1">
                     <MapPin size={11} className="text-orange-400 shrink-0" />
-                    New Delhi, 110017
+                    New Delhi, 110077
                   </span>
                   <a
-                    href="https://maps.google.com/?q=Saket+District+Centre+New+Delhi+Delhi+110017"
+                    href="https://maps.google.com/?q=New+Delhi+Delhi+110077"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[10px] font-bold text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-0.5"
