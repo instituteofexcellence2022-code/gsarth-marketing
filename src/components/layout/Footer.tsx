@@ -163,30 +163,48 @@ export function Footer() {
 
             {/* Google Map Card */}
             <div className="pt-2">
-              <div className="rounded-2xl overflow-hidden border border-white/10 bg-slate-900/80 shadow-md">
-                <iframe
-                  title="GSARTH Office Google Map - New Delhi 110077"
-                  src="https://maps.google.com/maps?q=New%20Delhi%2C%20Delhi%20110077&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="125"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  allowFullScreen={false}
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-[125px] opacity-90 hover:opacity-100 transition-opacity"
-                />
-                <div className="px-3 py-2 bg-slate-900/95 border-t border-white/5 flex items-center justify-between text-xs">
-                  <span className="text-[10px] font-semibold text-slate-300 flex items-center gap-1">
+              <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900/90 shadow-xl transition-all duration-300 hover:border-blue-500/30">
+                {/* Tech Status Header - Visible on Desktop/Tablet, Hidden on Mobile */}
+                <div className="hidden sm:flex items-center justify-between px-3 py-1.5 bg-slate-900/95 border-b border-white/5 text-[10px]">
+                  <div className="flex items-center gap-1.5 text-slate-300 font-bold">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span>Corporate HQ</span>
+                  </div>
+                  <span className="text-[9px] text-slate-400 font-mono tracking-wider">28.58°N, 77.07°E</span>
+                </div>
+
+                {/* Map Viewport - Compact on Mobile (95px), Enhanced on Desktop (180px) */}
+                <div className="relative w-full h-[95px] sm:h-[135px] lg:h-[180px] bg-slate-950">
+                  <iframe
+                    title="GSARTH Office Google Map - New Delhi 110077"
+                    src="https://maps.google.com/maps?q=Dwarka%2C%20New%20Delhi%2C%20Delhi%20110077&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    allowFullScreen={false}
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+
+                {/* Footer Toolbar - Ultra-compact on mobile, refined on desktop */}
+                <div className="px-2.5 sm:px-3 py-1.5 sm:py-2 bg-slate-900/95 border-t border-white/5 flex items-center justify-between">
+                  <span className="text-[10px] sm:text-[11px] font-semibold text-slate-300 flex items-center gap-1">
                     <MapPin size={11} className="text-orange-400 shrink-0" />
                     New Delhi, 110077
                   </span>
                   <a
-                    href="https://maps.google.com/?q=New+Delhi+Delhi+110077"
+                    href="https://maps.google.com/?q=Dwarka+New+Delhi+Delhi+110077"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] font-bold text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-0.5"
+                    className="text-[10px] sm:text-[11px] font-bold text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-0.5 group/link"
                   >
-                    Directions <ArrowUpRight size={11} />
+                    <span>Directions</span>
+                    <ArrowUpRight size={11} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
               </div>
