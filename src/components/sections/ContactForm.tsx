@@ -85,8 +85,9 @@ export function ContactForm() {
               {/* Name & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
-                  <label className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1 sm:ml-4">Full Name</label>
+                  <label htmlFor="contact-name" className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 ml-1 sm:ml-4">Full Name</label>
                   <input
+                    id="contact-name"
                     {...register("name")}
                     autoComplete="name"
                     autoCapitalize="words"
@@ -99,8 +100,9 @@ export function ContactForm() {
                   {errors.name && <p className="text-xs font-bold text-red-500 ml-1 sm:ml-4">{errors.name.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1 sm:ml-4">Business Email</label>
+                  <label htmlFor="contact-email" className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 ml-1 sm:ml-4">Business Email</label>
                   <input
+                    id="contact-email"
                     {...register("email")}
                     type="email"
                     inputMode="email"
@@ -120,8 +122,9 @@ export function ContactForm() {
               {/* Phone & Company */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
-                  <label className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1 sm:ml-4">Phone Number</label>
+                  <label htmlFor="contact-phone" className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 ml-1 sm:ml-4">Phone Number</label>
                   <input
+                    id="contact-phone"
                     {...register("phone")}
                     type="tel"
                     inputMode="tel"
@@ -135,8 +138,9 @@ export function ContactForm() {
                   {errors.phone && <p className="text-xs font-bold text-red-500 ml-1 sm:ml-4">{errors.phone.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1 sm:ml-4">Company Name</label>
+                  <label htmlFor="contact-company" className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 ml-1 sm:ml-4">Company Name</label>
                   <input
+                    id="contact-company"
                     {...register("company")}
                     autoComplete="organization"
                     placeholder="Acme Corp"
@@ -151,8 +155,9 @@ export function ContactForm() {
 
               {/* Service Selection */}
               <div className="space-y-2">
-                <label className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1 sm:ml-4">Interested In</label>
+                <label htmlFor="service-select" className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 ml-1 sm:ml-4">Interested In</label>
                 <select
+                  id="service-select"
                   {...register("service")}
                   className="w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-transparent rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 text-base focus:ring-0 focus:border-blue-600 transition-all outline-none appearance-none cursor-pointer"
                 >
@@ -167,8 +172,9 @@ export function ContactForm() {
 
               {/* Message */}
               <div className="space-y-2">
-                <label className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1 sm:ml-4">Project Goals</label>
+                <label htmlFor="contact-message" className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 ml-1 sm:ml-4">Project Goals</label>
                 <textarea
+                  id="contact-message"
                   {...register("message")}
                   rows={4}
                   autoComplete="off"

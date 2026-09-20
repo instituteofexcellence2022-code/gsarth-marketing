@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
 import { createPortal } from "react-dom";
 import { cn } from "~/lib/utils";
 import { NAV_LINKS } from "~/constants/navigation";
+import { Logo } from "./Logo";
 
 function useReducedMotion() {
   const [reduced, setReduced] = useState(false);
@@ -93,7 +94,9 @@ export function Navbar() {
           aria-label="Navigation menu"
         >
           <div className="flex justify-between items-center px-4 sm:px-6 py-4 border-b border-slate-100 dark:border-slate-800">
-            <span className="text-xl font-black">GSARTH</span>
+            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+              <Logo size="sm" showSubtitle={false} />
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -197,16 +200,8 @@ export function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0" aria-label="GSARTH Home">
-          <span className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 text-xs sm:text-sm font-black text-white shadow-lg shadow-blue-500/30">
-            G
-          </span>
-          <span className={cn(
-            "text-lg sm:text-2xl font-black tracking-tight transition-colors",
-            isScrolled ? "text-slate-900 dark:text-white" : "text-slate-900 dark:text-white"
-          )}>
-            GSARTH
-          </span>
+        <Link to="/" className="shrink-0">
+          <Logo isScrolled={isScrolled} />
         </Link>
 
         {/* Desktop Navigation */}

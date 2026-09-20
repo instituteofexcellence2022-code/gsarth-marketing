@@ -11,9 +11,10 @@ import { generateMetadata } from '~/lib/seo'
 
 export const Route = createFileRoute('/case-studies')({
   head: () => generateMetadata({
-    title: 'Success Stories | GSARTH Case Studies — Indian Brands, Real Results',
-    description: 'Explore how GSARTH scaled Indian businesses — from Delhi NCR clinics to D2C brands, coaching centers, real estate, and restaurants. Real metrics, real growth.',
-    keywords: 'marketing case studies India, branding success stories Delhi, local business growth case study, D2C brand marketing India, clinic marketing results, coaching center enrollment growth'
+    title: 'Client Case Studies & Growth Results',
+    description: 'Explore verified client case studies across healthcare, D2C, education, and real estate. Real growth metrics and ROI outcomes delivered by GSARTH.',
+    keywords: 'marketing case studies India, branding success stories Delhi, local business growth case study, D2C brand marketing India, clinic marketing results, coaching center enrollment growth',
+    canonical: '/case-studies',
   }),
   component: CaseStudiesPage,
 })

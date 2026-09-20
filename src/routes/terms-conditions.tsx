@@ -4,7 +4,8 @@ import { generateMetadata } from '~/lib/seo'
 export const Route = createFileRoute('/terms-conditions')({
   head: () => generateMetadata({
     title: 'Terms & Conditions',
-    description: 'The terms of engagement for working with GSARTH Marketing & Branding.'
+    description: 'Read the terms of service, engagement agreements, and client collaboration guidelines for working with GSARTH.',
+    canonical: '/terms-conditions',
   }),
   component: TermsPage,
 })

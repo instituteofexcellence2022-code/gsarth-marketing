@@ -69,10 +69,10 @@ export function Hero() {
           </div>
 
           <div className="mt-8 sm:mt-14 flex flex-col gap-3 sm:gap-4">
-            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-slate-400">
               Trusted by Market Leaders
             </p>
-            <div className="flex flex-wrap items-center gap-3 sm:gap-6 lg:gap-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 lg:gap-10 opacity-70 hover:opacity-100 transition-all text-slate-700 dark:text-slate-300">
               {["SKALIFY", "NOVENTRA", "AUREVA", "VIRTION"].map((brand) => (
                 <span
                   key={brand}
@@ -84,7 +84,7 @@ export function Hero() {
             </div>
 
             <div className="pt-4 sm:pt-6">
-              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-3 sm:mb-4">
+              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-slate-400 mb-3 sm:mb-4">
                 Certified & Registered
               </p>
               <div className="flex flex-wrap items-center gap-3 sm:gap-4">

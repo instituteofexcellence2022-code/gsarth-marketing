@@ -2,12 +2,13 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ArrowRight, CheckCircle2, ShieldCheck, Smartphone, Gauge, Code2, Search, Paintbrush, Layers, Database, Lock, Rocket } from 'lucide-react'
-import { generateMetadata } from '~/lib/seo'
+import { generateMetadata, generateFaqSchema } from '~/lib/seo'
 
 export const Route = createFileRoute('/web-development')({
   head: () => generateMetadata({
-    title: 'Elite Web Development | High-Conversion Digital Experiences',
-    description: 'SEO-friendly, lightning-fast corporate websites and landing pages built with modern architecture for maximum conversion.'
+    title: 'Custom Web Development & Digital Engineering',
+    description: 'High-performance corporate websites, scalable web applications, and conversion-optimized landing pages engineered for speed, SEO, and business growth.',
+    canonical: '/web-development',
   }),
   component: WebDevelopmentPage,
 })
@@ -94,6 +95,12 @@ function WebDevelopmentPage() {
 
   return (
     <div className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFaqSchema(webFaqs)),
+        }}
+      />
       {/* Hero */}
       <header className="pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-24 max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>

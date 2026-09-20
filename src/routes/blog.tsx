@@ -5,8 +5,9 @@ import { generateMetadata } from '~/lib/seo'
 
 export const Route = createFileRoute('/blog')({
   head: () => generateMetadata({
-    title: 'Strategic Growth Insights | Blog',
-    description: 'Expert perspectives on marketing, branding, and performance engineering from the GSARTH strategy team.'
+    title: 'Growth Insights & Marketing Strategy Blog',
+    description: 'Expert perspectives on SEO, branding, performance advertising, and digital growth systems from the GSARTH strategy team.',
+    canonical: '/blog',
   }),
   component: BlogPage,
 })

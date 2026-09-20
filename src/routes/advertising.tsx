@@ -9,13 +9,14 @@ import {
   Printer, Truck, Layout, Search,
   ChevronDown, Star, MessageSquare, Phone
 } from 'lucide-react'
-import { generateMetadata } from '~/lib/seo'
+import { generateMetadata, generateFaqSchema } from '~/lib/seo'
 
 export const Route = createFileRoute('/advertising')({
   head: () => generateMetadata({
     title: 'Advertising Solutions | Enterprise & Local Business Marketing',
-    description: 'GSARTH delivers strategic advertising for every scale — from enterprise branding and institutional campaigns to hyperlocal business promotions and shop branding.',
-    keywords: 'enterprise marketing agency, institutional branding, local business advertising, hoarding advertising Delhi, shop branding, clinic marketing, restaurant promotions, coaching center branding'
+    description: 'GSARTH delivers strategic advertising for every scale — from enterprise branding and institutional campaigns to hyperlocal shop branding and billboards.',
+    keywords: 'enterprise marketing agency, institutional branding, local business advertising, hoarding advertising Delhi, shop branding, clinic marketing, restaurant promotions, coaching center branding',
+    canonical: '/advertising'
   }),
   component: AdvertisingPage,
 })
@@ -387,6 +388,12 @@ function AdvertisingPage() {
 
   return (
     <div className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFaqSchema(faqs)),
+        }}
+      />
       {/* ===== HERO ===== */}
       <header className="relative pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-24 overflow-hidden bg-slate-950">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />

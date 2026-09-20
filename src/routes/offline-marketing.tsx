@@ -22,13 +22,20 @@ import {
   ChevronDown
 } from 'lucide-react'
 import { useState } from 'react'
-import { generateMetadata } from '~/lib/seo'
+import { generateMetadata, generateFaqSchema } from '~/lib/seo'
+
+const offlineFaqs = [
+  { q: 'How do you track offline campaign performance?', a: 'We use dynamic QR codes, dedicated landing pages, and attribution modeling to estimate impressions and measure direct engagement from physical assets.' },
+  { q: 'Can you help us find the best hoarding locations?', a: 'Yes. We use traffic intelligence and heatmap analysis to suggest locations that offer the highest audience density for your specific target market.' },
+  { q: 'Do you handle permissions and municipal compliance?', a: 'Absolutely. GSARTH manages all municipal permissions, structural audits, and legal compliance required for outdoor advertising.' },
+]
 
 export const Route = createFileRoute('/offline-marketing')({
   head: () => generateMetadata({
-    title: 'Offline Marketing & Branding Packages | GSARTH',
-    description: 'Premium offline marketing strategies. From high-impact hoardings and transit branding to QR-integrated print campaigns and local activations.',
-    keywords: 'Billboard Advertising India, Hoarding Pricing, Event Branding Packages, Retail Branding, Transit Advertising, QR Marketing, Offline to Online Funnel'
+    title: 'Offline Marketing & OOH Advertising Solutions',
+    description: 'High-impact outdoor hoardings, transit branding, retail environments, and QR-integrated offline campaigns engineered for market dominance.',
+    keywords: 'Billboard Advertising India, Hoarding Pricing, Event Branding Packages, Retail Branding, Transit Advertising, QR Marketing, Offline to Online Funnel',
+    canonical: '/offline-marketing',
   }),
   component: OfflineMarketingPage,
 })
@@ -107,6 +114,12 @@ function OfflineMarketingPage() {
 
   return (
     <div className="bg-white dark:bg-slate-950 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFaqSchema(offlineFaqs)),
+        }}
+      />
       {/* Premium Hero Section */}
       <header className="pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-24 lg:pb-32 relative overflow-hidden bg-slate-950">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
@@ -404,11 +417,7 @@ function OfflineMarketingPage() {
       <section className="py-16 sm:py-20 md:py-24 lg:py-32 max-w-4xl mx-auto px-4 sm:px-6">
          <h3 className="text-2xl sm:text-3xl font-black text-center mb-10 sm:mb-16">Frequently Asked Questions</h3>
          <div className="space-y-3 sm:space-y-4">
-            {[
-              { q: 'How do you track offline campaign performance?', a: 'We use dynamic QR codes, dedicated landing pages, and attribution modeling to estimate impressions and measure direct engagement from physical assets.' },
-              { q: 'Can you help us find the best hoarding locations?', a: 'Yes. We use traffic intelligence and heatmap analysis to suggest locations that offer the highest audience density for your specific target market.' },
-              { q: 'Do you handle permissions and municipal compliance?', a: 'Absolutely. GSARTH manages all municipal permissions, structural audits, and legal compliance required for outdoor advertising.' }
-            ].map((f, i) => (
+            {offlineFaqs.map((f, i) => (
               <details key={i} className="group p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 cursor-pointer">
                  <summary className="list-none flex items-center justify-between font-bold text-sm sm:text-base lg:text-lg">
                     {f.q}

@@ -2,12 +2,13 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Instagram, ArrowRight, CheckCircle2, TrendingUp, Users, Zap, Target, Camera, BarChart3, MessageSquare, Layers, CalendarDays, Sparkles } from 'lucide-react'
-import { generateMetadata } from '~/lib/seo'
+import { generateMetadata, generateFaqSchema } from '~/lib/seo'
 
 export const Route = createFileRoute('/social-media')({
   head: () => generateMetadata({
-    title: 'Social Growth Strategy | Community Architecture',
-    description: 'Transform followers into brand advocates. Elite social media marketing, viral content strategies, and community engineering by GSARTH.'
+    title: 'Social Media Marketing & Brand Growth Strategy',
+    description: 'Turn social followers into revenue. Data-backed organic social media management, viral content systems, and high-engagement community architecture.',
+    canonical: '/social-media',
   }),
   component: SocialMediaPage,
 })
@@ -101,6 +102,12 @@ function SocialMediaPage() {
 
   return (
     <div className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFaqSchema(socialFaqs)),
+        }}
+      />
       {/* Hero */}
       <header className="pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-24 max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>

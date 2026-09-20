@@ -11,7 +11,8 @@ export const Route = createFileRoute('/')({
   head: () => generateMetadata({
     title: 'Elite Marketing & Branding Agency in Delhi',
     description: 'GSARTH is a premium marketing and branding agency delivering world-class digital strategy, elite branding, and SEO solutions for modern enterprises.',
-    keywords: 'marketing agency Delhi, branding agency India, SEO experts, performance marketing, digital strategy, GSARTH'
+    keywords: 'marketing agency Delhi, branding agency India, SEO experts, performance marketing, digital strategy, GSARTH',
+    canonical: '/'
   }),
   component: HomePage,
 })

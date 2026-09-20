@@ -6,8 +6,9 @@ import { generateMetadata } from '~/lib/seo'
 
 export const Route = createFileRoute('/portfolio')({
   head: () => generateMetadata({
-    title: 'Elite Portfolio | GSARTH Case Studies',
-    description: 'A curated showcase of our most impactful brand transformations, performance campaigns, and growth engineering projects.'
+    title: 'Client Work & Brand Portfolio',
+    description: 'Explore our portfolio of brand transformations, performance marketing campaigns, and web engineering projects delivering measurable growth.',
+    canonical: '/portfolio',
   }),
   component: PortfolioPage,
 })

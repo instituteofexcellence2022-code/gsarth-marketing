@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { NAV_LINKS } from "~/constants/navigation";
+import { Logo } from "./Logo";
 import dpiitLogo from "../../../logo img/DPIIT logo.png";
 import isoCertLogo from "../../../logo img/iso cert logo.jpg";
 import msmeLogo from "../../../logo img/msme.png";
@@ -22,8 +23,8 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16 mb-16 sm:mb-20 lg:mb-24">
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1 space-y-5 sm:space-y-6">
-            <Link to="/" className="text-2xl sm:text-3xl font-black tracking-tight inline-block">
-              GSARTH
+            <Link to="/" className="inline-block">
+              <Logo size="lg" subtitle="Marketing • Advertising • Tech" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               Elite marketing and branding agency engineered for enterprise-grade growth systems. We translate vision into ROI.
@@ -46,7 +47,7 @@ export function Footer() {
             </div>
 
             <div className="pt-6 border-t border-white/10">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-4">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">
                 Certified & Registered
               </p>
               <div className="flex flex-wrap items-center gap-3">
@@ -75,15 +76,15 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h5 className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-[10px] sm:text-xs text-slate-500">
+            <p className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-[10px] sm:text-xs text-slate-400">
               Solutions
-            </h5>
+            </p>
             <ul className="space-y-3">
               {serviceChildren.map((service) => (
                 <li key={service.label}>
                   <Link
                     to={service.href as any}
-                    className="text-sm font-medium text-slate-400 hover:text-white hover:translate-x-1 transition-all inline-block"
+                    className="text-sm font-medium text-slate-300 hover:text-white hover:translate-x-1 transition-all inline-block"
                   >
                     {service.label}
                   </Link>
@@ -94,9 +95,9 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h5 className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-[10px] sm:text-xs text-slate-500">
+            <p className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-[10px] sm:text-xs text-slate-400">
               Company
-            </h5>
+            </p>
             <ul className="space-y-3">
               {["About", "Case Studies", "Blog", "Careers", "Contact"].map((item) => {
                 const link = NAV_LINKS.find((l) => l.label === item);
@@ -104,7 +105,7 @@ export function Footer() {
                   <li key={item}>
                     <Link
                       to={(link?.href as any) ?? "/"}
-                      className="text-sm font-medium text-slate-400 hover:text-white hover:translate-x-1 transition-all inline-block"
+                      className="text-sm font-medium text-slate-300 hover:text-white hover:translate-x-1 transition-all inline-block"
                     >
                       {item}
                     </Link>
@@ -116,16 +117,16 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h5 className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-[10px] sm:text-xs text-slate-500">
+            <p className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-[10px] sm:text-xs text-slate-400">
               Contact
-            </h5>
+            </p>
             <ul className="space-y-4 sm:space-y-5">
               <li className="flex gap-3">
                 <div className="h-9 w-9 shrink-0 rounded-lg bg-white/5 flex items-center justify-center text-blue-500">
                   <Mail size={16} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-0.5">Email</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Email</p>
                   <a className="text-sm font-bold hover:text-white transition-colors" href="mailto:contact@gsarth.com">
                     contact@gsarth.com
                   </a>
@@ -136,7 +137,7 @@ export function Footer() {
                   <Phone size={16} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-0.5">Call</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Call</p>
                   <a className="text-sm font-bold hover:text-white transition-colors" href="tel:+917678525920">
                     +91 76785 25920
                   </a>
@@ -147,7 +148,7 @@ export function Footer() {
                   <MapPin size={16} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-0.5">Office</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Office</p>
                   <a
                     className="text-sm font-bold hover:text-white transition-colors"
                     href="https://www.google.com/maps/search/?api=1&query=New%20Delhi%2C%20India"
@@ -164,10 +165,10 @@ export function Footer() {
 
         {/* Legal & Copyright */}
         <div className="pt-8 sm:pt-10 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-600 text-center sm:text-left">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 text-center sm:text-left">
             © {currentYear} GSARTH Marketing & Branding. All Rights Reserved.
           </p>
-          <div className="flex gap-6 sm:gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-600">
+          <div className="flex gap-6 sm:gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-400">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>

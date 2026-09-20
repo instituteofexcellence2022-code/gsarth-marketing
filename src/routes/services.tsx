@@ -19,13 +19,14 @@ import {
   Users,
   BarChart3
 } from 'lucide-react'
-import { generateMetadata } from '~/lib/seo'
+import { generateMetadata, generateFaqSchema } from '~/lib/seo'
 
 export const Route = createFileRoute('/services')({
   head: () => generateMetadata({
-    title: 'Growth Architecture | Integrated Online & Offline Marketing Agency',
-    description: 'GSARTH is a premier full-service marketing & branding agency. We deliver 360° growth solutions, combining technical SEO and performance marketing with high-impact outdoor advertising.',
-    keywords: 'Digital Marketing Agency, Branding Agency, SEO Services Delhi, Performance Marketing India, Outdoor Advertising, Billboard Advertising, Event Branding, Lead Generation Company'
+    title: '360° Growth Services | Online & Offline Marketing Agency',
+    description: 'GSARTH delivers 360° growth solutions: technical SEO, performance advertising, branding, and high-impact outdoor marketing engineered for scale.',
+    keywords: 'Digital Marketing Agency, Branding Agency, SEO Services Delhi, Performance Marketing India, Outdoor Advertising, Billboard Advertising, Event Branding, Lead Generation Company',
+    canonical: '/services'
   }),
   component: ServicesPage,
 })
@@ -668,6 +669,12 @@ function ServicesPage() {
 
   return (
     <div className="bg-white dark:bg-slate-950 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFaqSchema(faqs)),
+        }}
+      />
       {/* Premium Header Introduction */}
       <header className="pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-20 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[400px] sm:h-[500px] lg:h-[600px] bg-blue-500/5 blur-[80px] lg:blur-[120px] -z-0" />

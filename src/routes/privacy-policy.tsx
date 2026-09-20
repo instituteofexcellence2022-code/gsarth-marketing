@@ -4,7 +4,8 @@ import { generateMetadata } from '~/lib/seo'
 export const Route = createFileRoute('/privacy-policy')({
   head: () => generateMetadata({
     title: 'Privacy Policy',
-    description: 'How GSARTH handles your data with integrity, transparency, and enterprise-grade security.'
+    description: 'Learn how GSARTH handles your personal data, privacy rights, and enterprise-grade security protocols.',
+    canonical: '/privacy-policy',
   }),
   component: PrivacyPolicyPage,
 })

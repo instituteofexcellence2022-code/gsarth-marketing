@@ -2,12 +2,13 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ArrowRight, Search, ShieldCheck, CheckCircle2, TrendingUp, Database, Globe, FileText, Layers, Link2, Gauge } from 'lucide-react'
-import { generateMetadata } from '~/lib/seo'
+import { generateMetadata, generateFaqSchema } from '~/lib/seo'
 
 export const Route = createFileRoute('/seo')({
   head: () => generateMetadata({
-    title: 'Advanced SEO Strategy | Topical Authority & Technical Excellence',
-    description: 'Dominate organic search results with GSARTH. We focus on technical precision, topical authority, and high-intent content optimization.'
+    title: 'Advanced SEO Services & Topical Authority',
+    description: 'Dominate organic search with GSARTH. Technical SEO audits, Core Web Vitals optimization, entity search, and high-intent topical authority.',
+    canonical: '/seo',
   }),
   component: SeoPage,
 })
@@ -78,6 +79,12 @@ function SeoPage() {
 
   return (
     <div className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFaqSchema(seoFaqs)),
+        }}
+      />
       <header className="pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-24 max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h2 className="text-xs sm:text-sm font-black text-blue-600 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-6 sm:mb-8">Search Engineering</h2>

@@ -13,12 +13,13 @@ import {
   MessageSquare,
   ShieldCheck,
 } from 'lucide-react'
-import { generateMetadata } from '~/lib/seo'
+import { generateMetadata, generateFaqSchema } from '~/lib/seo'
 
 export const Route = createFileRoute('/lead-gen')({
   head: () => generateMetadata({
     title: 'Performance Marketing & Lead Generation',
-    description: 'ROI-driven paid acquisition campaigns engineered for scale. Dominate your market niche with GSARTH performance marketing.'
+    description: 'ROI-driven paid acquisition campaigns engineered for scale. Dominate your market niche with GSARTH performance marketing and lead generation.',
+    canonical: '/lead-gen',
   }),
   component: LeadGenPage,
 })
@@ -96,6 +97,12 @@ function LeadGenPage() {
 
   return (
     <div className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFaqSchema(leadGenFaqs)),
+        }}
+      />
       <header className="pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-24 max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tight mb-6 sm:mb-8">

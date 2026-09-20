@@ -6,9 +6,10 @@ import { generateMetadata } from '~/lib/seo'
 
 export const Route = createFileRoute('/contact')({
   head: () => generateMetadata({
-    title: 'Contact Our Elite Strategy Team',
-    description: 'Ready to scale your business? Book a consultation with GSARTH elite marketing and branding strategists in Delhi.',
-    keywords: 'contact GSARTH, marketing consultation, business growth audit, digital strategy contact'
+    title: 'Contact Our Growth Strategy Team',
+    description: 'Ready to scale your business? Book a strategic growth consultation with GSARTH marketing and advertising strategists in New Delhi.',
+    keywords: 'contact GSARTH, marketing consultation, business growth audit, digital strategy contact Delhi, growth agency consultation',
+    canonical: '/contact',
   }),
   component: ContactPage,
 })

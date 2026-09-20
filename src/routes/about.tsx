@@ -10,8 +10,9 @@ import { generateMetadata } from '~/lib/seo'
 
 export const Route = createFileRoute('/about')({
   head: () => generateMetadata({
-    title: 'About GSARTH | Elite Marketing, Branding & Advertising Agency',
-    description: 'GSARTH is a premier full-service marketing, branding and advertising agency in Delhi. Discover our story, philosophy, and the team behind 180+ successful brand transformations.'
+    title: 'About GSARTH | Elite Growth Agency',
+    description: 'Discover the story, philosophy, and team behind GSARTH — Delhi NCR’s premier growth marketing, branding, and advertising agency.',
+    canonical: '/about',
   }),
   component: AboutPage,
 })

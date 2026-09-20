@@ -2,12 +2,13 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ArrowRight, Layers, Target, CheckCircle2, ShieldCheck, Palette, Compass, FileText, Sparkles, LayoutGrid, MessageSquareQuote } from 'lucide-react'
-import { generateMetadata } from '~/lib/seo'
+import { generateMetadata, generateFaqSchema } from '~/lib/seo'
 
 export const Route = createFileRoute('/branding')({
   head: () => generateMetadata({
-    title: 'Elite Branding & Identity Services',
-    description: 'Build an authoritative brand that commands attention. Strategic positioning, visual systems, and messaging frameworks by GSARTH.'
+    title: 'Elite Branding & Visual Identity Services',
+    description: 'Build an authoritative brand that commands market attention. Strategic positioning, visual systems, and messaging frameworks by GSARTH.',
+    canonical: '/branding'
   }),
   component: BrandingPage,
 })
@@ -78,6 +79,12 @@ function BrandingPage() {
 
   return (
     <div className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFaqSchema(brandingFaqs)),
+        }}
+      />
       <header className="pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-24 max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h2 className="text-xs sm:text-sm font-black text-blue-600 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-6 sm:mb-8">Brand Architecture</h2>
