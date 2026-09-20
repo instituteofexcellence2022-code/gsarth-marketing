@@ -355,7 +355,7 @@ function SeoPage() {
             <Link to="/contact" className="btn-premium text-xs sm:text-sm px-6 sm:px-10 py-4 sm:py-5 inline-flex items-center justify-center gap-2">
               Book SEO Strategy Call <ArrowRight size={16} />
             </Link>
-            <a href="https://wa.me/919311015100" target="_blank" rel="noopener" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-white/10 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/5 transition-all">
+            <a href="https://wa.me/917678525920" target="_blank" rel="noopener" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-white/10 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/5 transition-all">
               WhatsApp Now
             </a>
           </div>

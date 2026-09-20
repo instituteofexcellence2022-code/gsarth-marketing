@@ -1081,7 +1081,7 @@ function ServicesPage() {
                           Get Proposal
                         </Link>
                         <a
-                          href="https://wa.me/919311015100"
+                          href="https://wa.me/917678525920"
                           target="_blank"
                           rel="noopener"
                           className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-slate-100 dark:border-slate-800 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-slate-50 dark:hover:bg-slate-900 transition-all text-center"
@@ -1217,7 +1217,7 @@ function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6">
                <Link to="/contact" className="btn-premium text-xs sm:text-sm px-6 sm:px-10 py-4 sm:py-5">Book Free Consultation</Link>
-               <a href="https://wa.me/919311015100" target="_blank" rel="noopener" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-slate-100 dark:border-slate-800 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">Get Strategy Call</a>
+               <a href="https://wa.me/917678525920" target="_blank" rel="noopener" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-slate-100 dark:border-slate-800 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">Get Strategy Call</a>
             </div>
          </motion.div>
       </section>

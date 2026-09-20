@@ -48,8 +48,8 @@ function ContactPage() {
               <ContactInfoItem 
                 icon={<Phone size={20} />}
                 label="Direct Line / WhatsApp"
-                value="+91 93110 15100"
-                href="tel:+919311015100"
+                value="+91 76785 25920"
+                href="tel:+917678525920"
                 color="green"
               />
               <ContactInfoItem 

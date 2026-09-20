@@ -365,7 +365,7 @@ function BrandingPage() {
               <Link to="/contact" className="px-6 sm:px-10 py-4 sm:py-5 bg-white text-blue-600 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:opacity-95 transition-opacity inline-flex items-center justify-center gap-2">
                 Request Brand Audit <ArrowRight size={16} />
               </Link>
-              <a href="https://wa.me/919311015100" target="_blank" rel="noopener" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-white/20 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
+              <a href="https://wa.me/917678525920" target="_blank" rel="noopener" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-white/20 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
                 WhatsApp Now
               </a>
             </div>

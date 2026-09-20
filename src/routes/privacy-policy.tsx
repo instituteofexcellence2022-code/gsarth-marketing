@@ -90,7 +90,7 @@ function PrivacyPolicyPage() {
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6 sm:mb-8">
             If you have any questions about this Privacy Policy, please contact us at{' '}
             <a href="mailto:contact@gsarth.com" className="text-blue-600 hover:underline">contact@gsarth.com</a> 
-            or via WhatsApp at +91 93110 15100.
+            or via WhatsApp at +91 76785 25920.
           </p>
         </div>
 

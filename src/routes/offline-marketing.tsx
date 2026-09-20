@@ -394,7 +394,7 @@ function OfflineMarketingPage() {
                </p>
                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6">
                   <Link to="/contact" className="px-6 sm:px-10 py-4 sm:py-5 bg-white text-orange-600 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-slate-100 transition-all shadow-xl">Request Free Audit</Link>
-                  <a href="https://wa.me/919311015100" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-white/20 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/10 transition-all">WhatsApp Inquiry</a>
+                  <a href="https://wa.me/917678525920" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-white/20 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/10 transition-all">WhatsApp Inquiry</a>
                </div>
             </div>
          </div>

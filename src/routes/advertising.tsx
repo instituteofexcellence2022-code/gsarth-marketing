@@ -615,8 +615,8 @@ function AdvertisingPage() {
                   <Link to="/contact" className="px-6 sm:px-10 py-4 sm:py-5 bg-blue-600 text-white rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-blue-700 transition-all text-center shadow-xl shadow-blue-600/20">
                     Request Enterprise Proposal
                   </Link>
-                  <a href="tel:+919311015100" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-white/15 text-white rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/5 transition-all text-center">
-                    Call +91 93110 15100
+                  <a href="tel:+917678525920" className="px-6 sm:px-10 py-4 sm:py-5 border-2 border-white/15 text-white rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/5 transition-all text-center">
+                    Call +91 76785 25920
                   </a>
                 </div>
               </div>
@@ -1094,7 +1094,7 @@ function AdvertisingPage() {
               Still have questions? Talk to a strategist directly.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-              <a href="https://wa.me/919311015100" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-emerald-600 text-white font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-emerald-700 transition-all">
+              <a href="https://wa.me/917678525920" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-emerald-600 text-white font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-emerald-700 transition-all">
                 <Phone size={14} /> WhatsApp Us
               </a>
               <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
@@ -1119,7 +1119,7 @@ function AdvertisingPage() {
             <Link to="/contact" className="px-8 sm:px-10 py-4 sm:py-5 bg-white text-orange-600 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-slate-100 transition-all shadow-xl inline-flex items-center justify-center gap-2">
               Grow My Business <ArrowRight size={16} />
             </Link>
-            <a href="https://wa.me/919311015100" className="px-8 sm:px-10 py-4 sm:py-5 border-2 border-white/20 text-white rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/10 transition-all text-center">
+            <a href="https://wa.me/917678525920" className="px-8 sm:px-10 py-4 sm:py-5 border-2 border-white/20 text-white rounded-full font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white/10 transition-all text-center">
               WhatsApp Us Now
             </a>
           </div>
