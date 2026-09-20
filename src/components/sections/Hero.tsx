@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BarChart3, ArrowRight } from "lucide-react";
+import { BarChart3, ArrowRight, ShieldCheck } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "~/lib/utils";
 import dpiitLogo from "../../../logo img/DPIIT logo.png";
@@ -84,26 +84,43 @@ export function Hero() {
             </div>
 
             <div className="pt-4 sm:pt-6">
-              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-slate-400 mb-3 sm:mb-4">
-                Certified & Registered
-              </p>
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
+                  <ShieldCheck size={14} className="text-blue-500 shrink-0" />
+                  <span>Certified & Registered</span>
+                </p>
+                <span className="text-[9px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                  Govt. Verified
+                </span>
+              </div>
+              <div className="grid grid-cols-3 max-w-sm sm:max-w-md gap-2.5 sm:gap-3">
                 {[
-                  { src: dpiitLogo, alt: "DPIIT Certified" },
-                  { src: isoCertLogo, alt: "ISO Certified" },
-                  { src: msmeLogo, alt: "MSME Registered" },
+                  { src: dpiitLogo, title: "DPIIT", subtitle: "Certified", alt: "DPIIT Certified" },
+                  { src: isoCertLogo, title: "ISO", subtitle: "Certified", alt: "ISO Certified" },
+                  { src: msmeLogo, title: "MSME", subtitle: "Registered", alt: "MSME Registered" },
                 ].map((badge) => (
                   <div
                     key={badge.alt}
-                    className="h-10 w-24 sm:h-11 sm:w-28 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800 flex items-center justify-center px-3 shadow-sm"
+                    className="group relative flex flex-col items-center justify-between p-2 sm:p-2.5 rounded-xl bg-white dark:bg-white border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
                   >
-                    <img
-                      src={badge.src}
-                      alt={badge.alt}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-7 sm:h-8 w-full object-contain opacity-90 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
-                    />
+                    <div className="h-9 sm:h-11 w-full flex items-center justify-center">
+                      <img
+                        src={badge.src}
+                        alt={badge.alt}
+                        title={badge.alt}
+                        loading="lazy"
+                        decoding="async"
+                        className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="mt-1.5 text-center w-full pt-1 border-t border-slate-100">
+                      <p className="text-[10px] sm:text-[11px] font-black tracking-tight text-slate-900 leading-none">
+                        {badge.title}
+                      </p>
+                      <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-slate-500 mt-0.5">
+                        {badge.subtitle}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>

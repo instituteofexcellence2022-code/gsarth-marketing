@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Twitter, Linkedin, Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
+import { Instagram, Twitter, Linkedin, Mail, MapPin, Phone, ArrowUpRight, ShieldCheck, Clock, Navigation } from "lucide-react";
 import { NAV_LINKS } from "~/constants/navigation";
 import { Logo } from "./Logo";
 import dpiitLogo from "../../../logo img/DPIIT logo.png";
@@ -47,27 +47,43 @@ export function Footer() {
             </div>
 
             <div className="pt-6 border-t border-white/10">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">
-                Certified & Registered
-              </p>
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex items-center justify-between mb-3.5">
+                <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-slate-300 flex items-center gap-1.5">
+                  <ShieldCheck size={14} className="text-blue-400 shrink-0" />
+                  <span>Certified & Registered</span>
+                </p>
+                <span className="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                  Govt. Verified
+                </span>
+              </div>
+              <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
                 {[
-                  { src: dpiitLogo, alt: "DPIIT Certified" },
-                  { src: isoCertLogo, alt: "ISO Certified" },
-                  { src: msmeLogo, alt: "MSME Registered" },
+                  { src: dpiitLogo, title: "DPIIT", subtitle: "Certified", alt: "DPIIT Certified" },
+                  { src: isoCertLogo, title: "ISO", subtitle: "Certified", alt: "ISO Certified" },
+                  { src: msmeLogo, title: "MSME", subtitle: "Registered", alt: "MSME Registered" },
                 ].map((badge) => (
                   <div
                     key={badge.alt}
-                    className="w-24 sm:w-28 rounded-2xl bg-white border border-slate-200/60 p-2 sm:p-2.5 shadow-[0_18px_40px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 transition-transform"
+                    className="group relative flex flex-col items-center justify-between p-2.5 sm:p-3 rounded-xl bg-white border border-slate-200/90 shadow-[0_4px_18px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.25)] hover:-translate-y-1 transition-all duration-300"
                   >
-                    <img
-                      src={badge.src}
-                      alt={badge.alt}
-                      title={badge.alt}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-7 sm:h-8 w-full object-contain drop-shadow-sm"
-                    />
+                    <div className="h-10 sm:h-12 w-full flex items-center justify-center">
+                      <img
+                        src={badge.src}
+                        alt={badge.alt}
+                        title={badge.alt}
+                        loading="lazy"
+                        decoding="async"
+                        className="max-h-full max-w-full object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="mt-2 text-center w-full pt-1.5 border-t border-slate-100">
+                      <p className="text-[10px] sm:text-[11px] font-black tracking-tight text-slate-900 leading-none">
+                        {badge.title}
+                      </p>
+                      <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-slate-500 mt-0.5">
+                        {badge.subtitle}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -164,10 +180,10 @@ export function Footer() {
         </div>
 
         {/* Large Location & Google Map Showcase (Expansive on Desktop, Compact on Mobile) */}
-        <div className="mb-12 sm:mb-16 lg:mb-20 rounded-2xl sm:rounded-3xl border border-white/10 bg-slate-900/60 overflow-hidden shadow-2xl">
+        <div className="mb-12 sm:mb-16 lg:mb-20 rounded-2xl sm:rounded-3xl border border-white/10 bg-slate-900/60 overflow-hidden shadow-2xl backdrop-blur-xl ring-1 ring-white/5">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
             {/* Left Info Panel */}
-            <div className="lg:col-span-4 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-b from-slate-900/90 to-slate-950 border-b lg:border-b-0 lg:border-r border-white/10">
+            <div className="lg:col-span-4 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-950 border-b lg:border-b-0 lg:border-r border-white/10">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] sm:text-[11px] font-black uppercase tracking-wider mb-4 sm:mb-6">
                   <span className="relative flex h-2 w-2">
@@ -176,29 +192,44 @@ export function Footer() {
                   </span>
                   Corporate Headquarters
                 </div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-heading font-black tracking-tight text-white mb-2 sm:mb-3">
+                <h3 className="text-2xl sm:text-3xl font-heading font-black tracking-tight text-white mb-2 sm:mb-3 leading-tight">
                   Visit Our Delhi Hub.
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
-                  Dwarka, New Delhi – 110077. Strategic hub for enterprise growth, full-funnel performance marketing, and branding architecture.
+                  Dwarka, New Delhi – 110077. Strategic headquarters engineered for performance marketing, enterprise branding, and search authority.
                 </p>
               </div>
 
-              <div className="space-y-3 pt-4 border-t border-white/10">
+              <div className="space-y-3.5 pt-4 border-t border-white/10">
                 <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span className="font-semibold text-slate-300">Office Hours:</span>
+                  <span className="font-semibold text-slate-300 flex items-center gap-1.5">
+                    <Clock size={13} className="text-blue-400 shrink-0" />
+                    Office Hours
+                  </span>
                   <span>Mon – Sat: 9:30 AM – 7:00 PM</span>
                 </div>
                 <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span className="font-semibold text-slate-300">GPS Coordinates:</span>
-                  <span className="font-mono text-[11px] text-blue-400">28.5823° N, 77.0689° E</span>
+                  <span className="font-semibold text-slate-300 flex items-center gap-1.5">
+                    <Navigation size={13} className="text-orange-400 shrink-0" />
+                    GPS Coordinates
+                  </span>
+                  <span className="font-mono text-[11px] text-blue-400 font-bold">28.5823° N, 77.0689° E</span>
+                </div>
+                <div className="flex items-center justify-between text-xs text-slate-400">
+                  <span className="font-semibold text-slate-300 flex items-center gap-1.5">
+                    <Phone size={13} className="text-emerald-400 shrink-0" />
+                    Direct Line
+                  </span>
+                  <a href="tel:+917678525920" className="hover:text-white font-semibold transition-colors">
+                    +91 76785 25920
+                  </a>
                 </div>
                 <div className="pt-2">
                   <a
-                    href="https://maps.google.com/?q=Dwarka+New+Delhi+Delhi+110077"
+                    href="https://maps.google.com/?q=28.5823,77.0689+(GSARTH+Marketing+HQ)"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs uppercase tracking-wider text-center transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-1.5 group"
+                    className="w-full py-3 sm:py-3.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 via-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-xs uppercase tracking-wider text-center transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 group"
                   >
                     <span>Get Directions in Google Maps</span>
                     <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -207,19 +238,24 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Right Expansive Map Canvas: Large on Desktop (340px+), Compact on Mobile (140px) */}
-            <div className="lg:col-span-8 relative w-full h-[140px] sm:h-[220px] lg:h-[340px] bg-slate-950">
+            {/* Right Expansive Map Canvas: Large on Desktop (360px+), Compact on Mobile (150px) */}
+            <div className="lg:col-span-8 relative w-full h-[150px] sm:h-[240px] lg:h-[360px] bg-slate-950 overflow-hidden group">
               <iframe
                 title="GSARTH Office Google Map - Large Desktop View - New Delhi 110077"
-                src="https://maps.google.com/maps?q=Dwarka%2C%20New%20Delhi%2C%20Delhi%20110077&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=28.5823,77.0689+(GSARTH%20Marketing%20%26%20Tech%20HQ)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 loading="lazy"
                 allowFullScreen={false}
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full opacity-90 hover:opacity-100 transition-opacity"
+                className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-500"
               />
+              {/* Floating Live Hub Badge */}
+              <div className="absolute top-3 right-3 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-white/10 shadow-lg text-[11px] text-slate-300 font-semibold pointer-events-none">
+                <MapPin size={12} className="text-orange-400 shrink-0" />
+                <span>Dwarka Sector Hub • New Delhi 110077</span>
+              </div>
             </div>
           </div>
         </div>
