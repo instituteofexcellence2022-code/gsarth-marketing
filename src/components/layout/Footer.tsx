@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Twitter, Linkedin, Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
 import { NAV_LINKS } from "~/constants/navigation";
 import { Logo } from "./Logo";
 import dpiitLogo from "../../../logo img/DPIIT logo.png";
@@ -115,12 +115,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
+          {/* Contact Info & Location */}
+          <div className="space-y-4">
             <p className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-[10px] sm:text-xs text-slate-400">
-              Contact
+              Contact & Location
             </p>
-            <ul className="space-y-4 sm:space-y-5">
+            <ul className="space-y-3.5 sm:space-y-4">
               <li className="flex gap-3">
                 <div className="h-9 w-9 shrink-0 rounded-lg bg-white/5 flex items-center justify-center text-blue-500">
                   <Mail size={16} />
@@ -137,7 +137,7 @@ export function Footer() {
                   <Phone size={16} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Call</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Call / WhatsApp</p>
                   <a className="text-sm font-bold hover:text-white transition-colors" href="tel:+917678525920">
                     +91 76785 25920
                   </a>
@@ -151,15 +151,46 @@ export function Footer() {
                   <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Office</p>
                   <a
                     className="text-sm font-bold hover:text-white transition-colors"
-                    href="https://www.google.com/maps/search/?api=1&query=New%20Delhi%2C%20India"
+                    href="https://maps.google.com/?q=Saket+District+Centre+New+Delhi+Delhi+110017"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    New Delhi, India
+                    Saket District Centre, New Delhi
                   </a>
                 </div>
               </li>
             </ul>
+
+            {/* Google Map Card */}
+            <div className="pt-2">
+              <div className="rounded-2xl overflow-hidden border border-white/10 bg-slate-900/80 shadow-md">
+                <iframe
+                  title="GSARTH Office Google Map - Saket District Centre, New Delhi"
+                  src="https://maps.google.com/maps?q=Saket%20District%20Centre%2C%20New%20Delhi%2C%20Delhi%20110017&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="125"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen={false}
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-[125px] opacity-90 hover:opacity-100 transition-opacity"
+                />
+                <div className="px-3 py-2 bg-slate-900/95 border-t border-white/5 flex items-center justify-between text-xs">
+                  <span className="text-[10px] font-semibold text-slate-300 flex items-center gap-1">
+                    <MapPin size={11} className="text-orange-400 shrink-0" />
+                    New Delhi, 110017
+                  </span>
+                  <a
+                    href="https://maps.google.com/?q=Saket+District+Centre+New+Delhi+Delhi+110017"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] font-bold text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-0.5"
+                  >
+                    Directions <ArrowUpRight size={11} />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
